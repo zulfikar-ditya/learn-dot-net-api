@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using PokemonReview.Data;
 using PokemonReview.Data.Seeders;
+using Providers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,9 @@ builder.Services.AddDbContext<DataContext>(options => {
 });
 
 builder.Services.AddTransient<Seed>();
+
+BindServiceProvider bindServiceProvider = new BindServiceProvider(builder);
+bindServiceProvider.execute();
 
 var app = builder.Build();
 
