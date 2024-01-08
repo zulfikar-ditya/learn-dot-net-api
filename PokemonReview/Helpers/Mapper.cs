@@ -9,6 +9,9 @@ namespace Helpers
         public Mapper()
         {
             CreateMap<Pokemon, PokemonDto>();
+            CreateMap<Category, CategoryDto>();
+            CreateMap<Country, CountryDto>();
+            CreateMap<Owner, OwnerDto>();
         }
     }
 }

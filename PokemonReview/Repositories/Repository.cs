@@ -56,5 +56,12 @@ namespace Repositories
         {
             _dataContext.SaveChanges();
         }
+
+        public bool IsExist(Expression<Func<T, bool>> filter)
+        {
+            IQueryable<T> queryable = _dbSet;
+
+            return queryable.Any(filter);
+        }
     }
 }

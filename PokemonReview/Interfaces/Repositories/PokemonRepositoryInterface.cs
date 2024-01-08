@@ -8,6 +8,8 @@ namespace Interfaces.Repositories
 
         Pokemon GetPokemon(string name);
 
+        ICollection<Pokemon> GetPokemonsByCategory(int id);
+
         double GetPokemonRating(int id);
 
         bool PokemonIsExist(int id);

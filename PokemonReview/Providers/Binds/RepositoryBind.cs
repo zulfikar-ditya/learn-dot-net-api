@@ -15,6 +15,8 @@ namespace Providers.Binds
         public void bind()
         {
             _builder.Services.AddScoped<PokemonRepositoryInterface, PokemonRepository>();
+            _builder.Services.AddScoped<CategoryRepositoryInterface, CategoryRepository>();
+            _builder.Services.AddScoped<CountryRepositoryInterface, CountryRepository>();
         }
     }
 }

@@ -23,6 +23,11 @@ namespace Repositories
             return _dataContext.Pokemons.Where(u => u.Name == name).First();
         }
 
+        public ICollection<Pokemon> GetPokemonsByCategory(int id)
+        {
+            return _dataContext.PokemonCategories.Where(u => u.CategoryId == id).Select(s => s.Pokemon).ToList();
+        }
+
         public double GetPokemonRating(int id)
         {
             IQueryable<Review> reviews = _dataContext.Reviews.Where(u => u.Pokemon.Id == id);

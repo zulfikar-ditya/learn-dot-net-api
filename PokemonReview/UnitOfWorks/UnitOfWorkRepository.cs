@@ -11,11 +11,17 @@ namespace UnitOfWorks
 
         public PokemonRepositoryInterface Pokemon { get; private set;}
 
+        public CategoryRepositoryInterface Category { get; private set; }
+
+        public CountryRepositoryInterface Country { get; private set; }
+
         public UnitOfWorkRepository(DataContext db)
         {
             _db = db;
 
             Pokemon = new PokemonRepository(_db);
+            Category = new CategoryRepository(_db);
+            Country = new CountryRepository(_db);
         }
     }
 }
