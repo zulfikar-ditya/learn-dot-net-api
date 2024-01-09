@@ -9,5 +9,11 @@ namespace Interfaces.UnitOfWorks
         CategoryRepositoryInterface Category { get; }
 
         CountryRepositoryInterface Country { get; }
+
+        OwnerRepositoryInterface Owner { get; }
+
+        ReviewRepositoryInterface Review { get; }
+
+        ReviewerRepositoryInterface Reviewer { get; }
     }
 }

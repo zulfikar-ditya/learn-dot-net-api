@@ -17,6 +17,9 @@ namespace Providers.Binds
             _builder.Services.AddScoped<PokemonRepositoryInterface, PokemonRepository>();
             _builder.Services.AddScoped<CategoryRepositoryInterface, CategoryRepository>();
             _builder.Services.AddScoped<CountryRepositoryInterface, CountryRepository>();
+            _builder.Services.AddScoped<OwnerRepositoryInterface, OwnerRepository>();
+            _builder.Services.AddScoped<ReviewRepositoryInterface, ReviewRepository>();
+            _builder.Services.AddScoped<ReviewerRepositoryInterface, ReviewerRepository>();
         }
     }
 }

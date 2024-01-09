@@ -15,6 +15,12 @@ namespace UnitOfWorks
 
         public CountryRepositoryInterface Country { get; private set; }
 
+        public OwnerRepositoryInterface Owner { get; private set; }
+
+        public ReviewRepositoryInterface Review { get; private set; }
+
+        public ReviewerRepositoryInterface Reviewer { get; private set; }
+
         public UnitOfWorkRepository(DataContext db)
         {
             _db = db;
@@ -22,6 +28,9 @@ namespace UnitOfWorks
             Pokemon = new PokemonRepository(_db);
             Category = new CategoryRepository(_db);
             Country = new CountryRepository(_db);
+            Owner = new OwnerRepository(_db);
+            Review = new ReviewRepository(_db);
+            Reviewer = new ReviewerRepository(_db);
         }
     }
 }

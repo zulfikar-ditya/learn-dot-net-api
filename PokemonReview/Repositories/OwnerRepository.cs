@@ -9,12 +9,19 @@ namespace Repositories
     {
         private readonly DataContext _dataContext;
 
-        private readonly IMapper _mapper;
-
-        public OwnerRepository(DataContext dataContext, IMapper mapper) : base(dataContext)
+        public OwnerRepository(DataContext dataContext) : base(dataContext)
         {
             _dataContext = dataContext;
-            _mapper = mapper;
+        }
+
+        public ICollection<Owner> GetOwnerOfAPokemon(int PokemonId)
+        {
+            return _dataContext.PokemonOwners.Where(p => p.PokemonId == PokemonId).Select(s => s.Owner).ToList();
+        }
+
+        public ICollection<Pokemon> GetPokemonsByOwner(int OwnerId)
+        {
+            return _dataContext.PokemonOwners.Where(o => o.OwnerId == OwnerId).Select(s => s.Pokemon).ToList();
         }
     }
 }
