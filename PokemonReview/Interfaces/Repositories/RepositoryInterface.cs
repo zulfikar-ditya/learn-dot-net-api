@@ -16,7 +16,7 @@ namespace Interfaces.Repositories
 
         void DeleteIn(IEnumerable<T> entities);
 
-        void Save(T entity);
+        void Save();
 
         bool IsExist(Expression<Func<T, bool>> filter);
     }

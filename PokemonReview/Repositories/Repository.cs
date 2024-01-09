@@ -52,7 +52,7 @@ namespace Repositories
             _dataContext.RemoveRange(entities);
         }
 
-        public void Save(T entity)
+        public void Save()
         {
             _dataContext.SaveChanges();
         }
